@@ -1,0 +1,136 @@
+/* Main Container */
+:root {
+--danger-bg: #cc0000;
+--danger-hover: #990000;
+--danger-text: #ffffff;
+}
+body.light {
+  --danger-bg: #cc0000;
+--danger-hover: #990000;
+--danger-text: #ffffff;
+}
+body.dark {
+
+  --danger-bg: #ff3b3b;
+--danger-hover: #cc0000;
+--danger-text: #ffffff;
+}
+
+.unsubscribe-btn {
+  padding: 6px 12px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.unsubscribe-btn:hover {
+  background: var(--danger-hover);
+}
+
+.subscription-list {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.subscription-list h2 {
+  color:var(--text-color);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Table Styling */
+.subscription-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subscription-table thead {
+  background: var(--hover-bg);
+}
+
+.subscription-table th,
+.subscription-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.subscription-table th {
+  border-bottom: 2px solid var(--hover-bg);
+}
+
+.subscription-table td {
+  border-bottom: 1px solid var(--hover-bg);
+}
+
+.subscription-table tbody tr:hover {
+  background: var(--hover-bg);
+}
+
+/* No Subscription Message */
+.no-subs-message {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+/* Sign In Section */
+.main-subscript-class {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.main-subscript-description-class {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.subscript-detail-class {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-signin-class {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .subscription-list {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .subscription-table th,
+  .subscription-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .main-subscript-description-class {
+    font-size: 22px;
+  }
+
+  .subscript-detail-class {
+    font-size: 16px;
+  }
+}

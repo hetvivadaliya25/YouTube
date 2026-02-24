@@ -1,0 +1,185 @@
+/* ===== GLOBAL SHORTS STYLES =====*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== SHORTS WRAPPER =====*/ 
+.shorts-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  background-color: var(--bg-color);
+  scrollbar-width: none;
+}
+
+.shorts-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== SINGLE SHORT ===== */
+.short-card {
+  height: 100vh; 
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ===== VIDEO CONTAINER ===== */
+.short-video-container {
+  height: 90%;
+  width: auto;
+  aspect-ratio: 9/16;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  background: black;
+  border-radius: 12px;
+}
+
+.short-video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== RIGHT SIDE ICONS ===== */
+.short-right-sidebar {
+  position: absolute;
+  /* વિડિયોની જમણી બાજુ પરફેક્ટ રાખવા માટે */
+  right: calc(50% - 310px); 
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.short-action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  /* થીમ મુજબ લખાણનો કલર બદલાશે */
+  color: var(--text-color); 
+}
+
+.short-icon-circle {
+  width: 50px;
+  height: 50px;
+  background: var(--hover-bg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  margin-bottom: 5px;
+}
+
+/* 🔥 થીમ મુજબ લાઈક/ડિસ્લાઈક કલર લોજિક */
+.active-like {
+  background: #3ea6ff !important; /* Blue background */
+}
+
+/* એક્ટિવ હોય ત્યારે આઈકોનનો કલર થીમ મુજબ વ્હાઈટ કે બ્લેક થશે */
+.active-like svg, .active-dislike svg {
+  color: var(--text-color) !important;
+}
+
+.active-dislike {
+  background: #ff4e4e !important; /* Red background */
+}
+
+.short-icon-circle:hover {
+  transform: scale(1.1);
+}
+
+/* આઈકોન અંદરનો સામાન્ય કલર */
+.short-icon-circle svg {
+  color: var(--text-color);
+}
+
+/* ===== BOTTOM INFO ===== */
+.short-info-overlay {
+  position: absolute;
+  bottom: 100px;
+  /* વિડિયોની ડાબી બાજુ સેટ કરવા */
+  left: 50px;
+  z-index: 10;
+  width: 300px;
+  /* થીમ મુજબ ટાઈટલ અને નામનો કલર બદલાશે */
+  color: var(--text-color);
+}
+
+.short-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.short-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* થીમ મુજબ બોર્ડર બદલાશે */
+  border: 1px solid var(--text-color);
+  background: #888;
+}
+
+.short-username {
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+.short-subscribe-btn {
+  /* Subscribe બટન YouTube જેવું બ્રાઈટ રેડ રાખવું સારું લાગે, 
+     પણ જો થીમ મુજબ કરવું હોય તો background: var(--text-color); color: var(--bg-color); કરી શકાય */
+  background: #cc0000; 
+  border: none;
+  padding: 6px 15px;
+  border-radius: 20px;
+  color: white; 
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.short-title-text {
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--text-color);
+  /* શેડો હટાવી દીધો અથવા થીમ મુજબ એડજસ્ટ કર્યો */
+  text-shadow: 1px 1px 2px var(--bg-color);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .short-video-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .short-right-sidebar {
+    right: 15px;
+    bottom: 150px;
+  }
+
+  .short-info-overlay {
+    left: 20px;
+    bottom: 100px;
+    /* મોબાઈલમાં ફૂલ વિડિયો પર વ્હાઈટ ટેક્સ્ટ વધુ સારો લાગે છે */
+    color: white; 
+  }
+}

@@ -169,7 +169,7 @@ const UserDetails = () => {
               )}
 
               <div className="userdetl-user-icon" onClick={() => setIsDropdownListOpen(!isDropdownListOpen)} style={{ cursor: 'pointer' }}>
-                {channelInfo.name ? channelInfo.name.charAt(0).toUpperCase() : "K"}
+                {channelInfo.name ? channelInfo.name.charAt(0).toUpperCase() : "H"}
               </div>
               {isDropdownListOpen && (
                 <div className="userdetl-dropdown-menu profile-dropdown">
